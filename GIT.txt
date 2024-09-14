@@ -437,3 +437,283 @@ Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/SecondRepo (main)
 $ ^C
 
 Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/SecondRepo (main)
+
+
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org-details
+$ cd ../.
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo
+$ mkdir Org_details
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo
+$ git init
+Initialized empty Git repository in C:/Users/Admin/Git_demo/.git/
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo (master)
+$ cd ../..
+
+Admin@DESKTOP-O0IVFMI MINGW64 /c/Users
+$ cd Git_demo
+bash: cd: Git_demo: No such file or directory
+
+Admin@DESKTOP-O0IVFMI MINGW64 /c/Users
+$ cd Admin
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~
+$ cd Git_demo
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo
+$ cd Org_details
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details
+$ git init
+Initialized empty Git repository in C:/Users/Admin/Git_demo/Org_details/.git/
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ notepad test.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ notepad admins.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        admins.txt
+        test.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git commit -m "First commit"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        admins.txt
+        test.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git add .
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git commit -m "First commit"
+[master (root-commit) 0ff8a65] First commit
+ 2 files changed, 2 insertions(+)
+ create mode 100644 admins.txt
+ create mode 100644 test.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git log
+commit 0ff8a65714cfa622b3201a8e4814486e8aa2d7fe (HEAD -> master)
+Author: Loki <lokeshbabu.1993@gmail.com>
+Date:   Sat Sep 14 09:00:37 2024 +0530
+
+    First commit
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git log --pretty=oneline
+0ff8a65714cfa622b3201a8e4814486e8aa2d7fe (HEAD -> master) First commit
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git branch Test1_branch
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git branch
+  Test1_branch
+* master
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git checkout Test1_branch
+Switched to branch 'Test1_branch'
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (Test1_branch)
+$ ls
+admins.txt  test.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (Test1_branch)
+$ notepad address.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (Test1_branch)
+$ git add .
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (Test1_branch)
+$ git commit -m "Test1 branch commit"
+[Test1_branch 0df705d] Test1 branch commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 address.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (Test1_branch)
+$ git checkout master
+Switched to branch 'master'
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git checkout Test1_branch
+Switched to branch 'Test1_branch'
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (Test1_branch)
+$ ^C
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (Test1_branch)
+$ git checkout master
+Switched to branch 'master'
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git push -u origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git remote https://github.com/Lokeshbabu1993/Org_details.git
+error: unknown subcommand: `https://github.com/Lokeshbabu1993/Org_details.git'
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename [--[no-]progress] <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --[no-]verbose    be verbose; must be placed before a subcommand
+
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git remote add Org_details  https://github.com/Lokeshbabu1993/Org_details.git
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream Org_details master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ ^C
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ ^[[200~   git push --set-upstream Org_details master
+bash: $'\E[200~': command not found
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git push --set-upstream Org_details master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 265 bytes | 265.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Lokeshbabu1993/Org_details.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'Org_details/master'.
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git log
+commit 0ff8a65714cfa622b3201a8e4814486e8aa2d7fe (HEAD -> master, Org_details/master)
+Author: Loki <lokeshbabu.1993@gmail.com>
+Date:   Sat Sep 14 09:00:37 2024 +0530
+
+    First commit
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git push -u origin Test1_branch
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (master)
+$ git checkout Test1_branch
+Switched to branch 'Test1_branch'
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (Test1_branch)
+$ git push
+fatal: The current branch Test1_branch has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream Org_details Test1_branch
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (Test1_branch)
+$ git push --set-upstream Org_details Test1_branch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'Test1_branch' on GitHub by visiting:
+remote:      https://github.com/Lokeshbabu1993/Org_details/pull/new/Test1_branch
+remote:
+To https://github.com/Lokeshbabu1993/Org_details.git
+ * [new branch]      Test1_branch -> Test1_branch
+branch 'Test1_branch' set up to track 'Org_details/Test1_branch'.
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (Test1_branch)
+$ ^C
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (Test1_branch)
+$ ^[[200~git push --set-upstream Org_details Test1_branch
+bash: $'\E[200~git': command not found
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (Test1_branch)
+$ git push Org_details Test1_branch
+Everything up-to-date
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/Org_details (Test1_branch)
+$
