@@ -1,0 +1,439 @@
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~
+$ git -version
+unknown option: -version
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
+           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
+           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~
+$ git help
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
+           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
+           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~
+$ git config --global user.name "Loki"
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~
+$ git config --global user.email lokeshbabu.1993@gmail.com
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~
+$ git config list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=Loki
+user.email=lokeshbabu.1993@gmail.com
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~
+$ pwd
+/c/Users/Admin
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~
+$ mkdir Git_demo
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~
+$ cd Git_demo
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo
+$ mkdir FristRepo
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo
+$ rm FristRepo
+rm: cannot remove 'FristRepo': Is a directory
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo
+$ mkdir FirstRepo
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo
+$ cd FirstRepo
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo
+$ pwd
+/c/Users/Admin/Git_demo/FirstRepo
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo
+$ git init
+Initialized empty Git repository in C:/Users/Admin/Git_demo/FirstRepo/.git/
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ touch master.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ notepad master.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        master.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git add .
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   master.txt
+
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git commit -m "sample file"
+[master (root-commit) 985d1ea] sample file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 master.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git log
+commit 985d1ea288d160f35a8fc13670b241d01abf73d1 (HEAD -> master)
+Author: Loki <lokeshbabu.1993@gmail.com>
+Date:   Sat Sep 14 07:49:30 2024 +0530
+
+    sample file
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ touch master1.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ notepad master1.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        master1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git add .
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git commit -m "Second sample file"
+[master 2513d58] Second sample file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 master1.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ notepad master1.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   master.txt
+        modified:   master1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git add .
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git commit -m "Latest updates"
+[master baf9b58] Latest updates
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git log
+commit baf9b58406368d4bfb2ef898890b4043bc1d0a66 (HEAD -> master)
+Author: Loki <lokeshbabu.1993@gmail.com>
+Date:   Sat Sep 14 07:52:51 2024 +0530
+
+    Latest updates
+
+commit 2513d58407a11dcc51710a234401000c31d5e4a7
+Author: Loki <lokeshbabu.1993@gmail.com>
+Date:   Sat Sep 14 07:51:35 2024 +0530
+
+    Second sample file
+
+commit 985d1ea288d160f35a8fc13670b241d01abf73d1
+Author: Loki <lokeshbabu.1993@gmail.com>
+Date:   Sat Sep 14 07:49:30 2024 +0530
+
+    sample file
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git remote add origin https://github.com/Lokeshbabu1993/FirstRepo.git
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git remote -v
+origin  https://github.com/Lokeshbabu1993/FirstRepo.git (fetch)
+origin  https://github.com/Lokeshbabu1993/FirstRepo.git (push)
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ git push -u origin master
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (10/10), 763 bytes | 763.00 KiB/s, done.
+Total 10 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Lokeshbabu1993/FirstRepo.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ ssh-keygen -t rsa -C lokeshbabu.1993@gmail.com
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Admin/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in
+Your public key has been saved in .pub
+The key fingerprint is:
+SHA256:AW8/OxgwpHhPYI3GDLnOZynJRLoxtnAjrjivZZY2bEY lokeshbabu.1993@gmail.com
+The key's randomart image is:
++---[RSA 3072]----+
+|  .=ooo          |
+|  oo=+.o         |
+| o.oo + +        |
+|*.=. o + o       |
+|+@Eo .. S o      |
+|.=*.+    o o     |
+|o @+    . o      |
+|+B .       .     |
+|.+.              |
++----[SHA256]-----+
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ ^C
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ ssh-keygen -t rsa -C lokeshbabu.1993@gmail.com
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Admin/.ssh/id_rsa):
+Created directory '/c/Users/Admin/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Admin/.ssh/id_rsa
+Your public key has been saved in /c/Users/Admin/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:k1Xcto3LhPEbNTCRkwTc9FeNvsxS1B5bx9J9nLIOUEs lokeshbabu.1993@gmail.com
+The key's randomart image is:
++---[RSA 3072]----+
+|          oE*B=*=|
+|         ..o+*O+&|
+|          o. B+OO|
+|         o ...O.+|
+|        S   o* = |
+|         .  ..B  |
+|             .   |
+|                 |
+|                 |
++----[SHA256]-----+
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ ssh -T git@github.com
+The authenticity of host 'github.com (20.207.73.82)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+Host key verification failed.
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ ssh -T git@github.com
+The authenticity of host 'github.com (20.207.73.82)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Enter passphrase for key '/c/Users/Admin/.ssh/id_rsa':
+Hi Lokeshbabu1993! You've successfully authenticated, but GitHub does not provide shell access.
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ pwd
+/c/Users/Admin/Git_demo/FirstRepo
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/FirstRepo (master)
+$ cd ../..
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~
+$ pwd
+/c/Users/Admin
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~
+$ cd Git_demo
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo
+$ git clone git@github.com:Lokeshbabu1993/SecondRepo.git
+Cloning into 'SecondRepo'...
+Enter passphrase for key '/c/Users/Admin/.ssh/id_rsa':
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo
+$ ls
+FirstRepo/  SecondRepo/
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo
+$ cd SecondRepo
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/SecondRepo (main)
+$ ls
+README.md
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/SecondRepo (main)
+$ notepad master3.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/SecondRepo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        master3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/SecondRepo (main)
+$ git add .
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/SecondRepo (main)
+$ git commit -m "Second repo"
+[main acae3d6] Second repo
+ 1 file changed, 1 insertion(+)
+ create mode 100644 master3.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/SecondRepo (main)
+$ git remote -v
+origin  git@github.com:Lokeshbabu1993/SecondRepo.git (fetch)
+origin  git@github.com:Lokeshbabu1993/SecondRepo.git (push)
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/SecondRepo (main)
+$ git push originmaster
+fatal: 'originmaster' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/SecondRepo (main)
+$ git push origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'github.com:Lokeshbabu1993/SecondRepo.git'
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/SecondRepo (main)
+$ git push
+Enter passphrase for key '/c/Users/Admin/.ssh/id_rsa':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 293 bytes | 293.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:Lokeshbabu1993/SecondRepo.git
+   5c48a83..acae3d6  main -> main
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/SecondRepo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/SecondRepo (main)
+$ ls
+README.md  master3.txt
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/SecondRepo (main)
+$ ^C
+
+Admin@DESKTOP-O0IVFMI MINGW64 ~/Git_demo/SecondRepo (main)
